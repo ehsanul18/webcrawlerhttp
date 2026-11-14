@@ -9,13 +9,13 @@ function getURLsFromHTML(htmlBody, baseURL) {
             try {
                 urls.push(new URL(linkElement.href, baseURL).href)
             } catch (err){
-                console.log(`${err.message}: ${linkElement.href}`)
+                console.log(`Error with relative url - ${err.message}: ${linkElement.href}`)
             }
         } else {
             try {
                 urls.push(new URL(linkElement.href).href)
             } catch (err){
-                console.log(`${err.message}: ${linkElement.href}`)
+                console.log(`Error with absolute url -${err.message}: ${linkElement.href}`)
             }
         }
     }
